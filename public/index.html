@@ -193,6 +193,8 @@
     <p id="initData">
     <p>InitDataUnsafe</p>
     <p id="initDataUnsafe">
+    <p>Params</p>
+    <p id="params">
 
 </section>
 
@@ -201,11 +203,13 @@
 
     const initData = Telegram.WebApp.initData || '';
     const initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
+    const params = Telegram.WebApp.params || {};
 
     document.querySelector('#greeting').innerHTML = `Hi, ${initDataUnsafe.user.first_name}!`;
     document.querySelector('#initData').innerHTML = JSON.stringify(initData, null, 2);
     document.querySelector('#initDataUnsafe').innerHTML = JSON.stringify(initDataUnsafe, null, 2);
     document.querySelector('#themeData').html(JSON.stringify(Telegram.WebApp.themeParams, null, 2));
+    document.querySelector('#params').innerHTML = JSON.stringify(params, null, 2);
 
     Telegram.WebApp.MainButton
         .setText('CLOSE WEBVIEW')
